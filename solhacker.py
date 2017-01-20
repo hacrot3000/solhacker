@@ -9,7 +9,8 @@ from pyamf import sol
 
 # ------------------------------------------------------------------------------
 def sol2py(filename):
-  solobject = sol.decode(sys.stdin)
+  lines = "".join(sys.stdin.readlines())
+  solobject = sol.decode(lines)
   pprint.pprint(solobject)
 
 # ------------------------------------------------------------------------------
