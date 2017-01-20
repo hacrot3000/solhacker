@@ -9,16 +9,12 @@ from pyamf import sol
 
 # ------------------------------------------------------------------------------
 def sol2py(filename):
-  file = open(filename)
-  solobject = sol.decode(file)
+  solobject = sol.decode(sys.stdin)
   pprint.pprint(solobject)
-  file.close()
 
 # ------------------------------------------------------------------------------
 def py2sol(filename):
-  file = open(filename)
-  lines = "".join(file.readlines())
-  file.close()
+  lines = "".join(sys.stdin.readlines())
   pyobject = ast.literal_eval(lines)
   solobject = sol.encode(pyobject[0], pyobject[1])
   sys.stdout.write(solobject.getvalue())
