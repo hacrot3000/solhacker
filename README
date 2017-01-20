@@ -1,0 +1,3 @@
+convert flash cookie to "json" and back
+
+requires python 2 and PyAMF
