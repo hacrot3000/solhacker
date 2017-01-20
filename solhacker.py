@@ -7,7 +7,6 @@ import sys
 
 from pyamf import sol
 
-# ------------------------------------------------------------------------------
 def main():
   lines = "".join(sys.stdin.readlines())
   try:
@@ -18,6 +17,5 @@ def main():
     solobject = sol.encode(pyobject[0], pyobject[1])
     sys.stdout.write(solobject.getvalue())
 
-# ------------------------------------------------------------------------------
 if __name__ == "__main__":
   main()
