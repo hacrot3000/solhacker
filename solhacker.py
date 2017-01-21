@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import ast
-import os
 import pprint
 import sys
 
