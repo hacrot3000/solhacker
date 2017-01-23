@@ -4,12 +4,12 @@ mkdir -p testdir
 cd testdir
 
 echo "test decode"
-../solhacker.py <<< "solbinaryblob" > delme-decode-actual.txt
-echo "'fakepyamfdecode:solbinaryblob\n'" > delme-decode-expected.txt
-diff delme-decode-actual.txt delme-decode-expected.txt
+../solhacker.py <<< "solbinaryblob" > decode-actual.txt
+echo "'fakepyamfdecode:solbinaryblob\n'" > decode-expected.txt
+diff decode-actual.txt decode-expected.txt
 
 echo "test encode"
-../solhacker.py <<< "('py', 'tuple')" > delme-encode-actual.txt
-echo "fakepyamfencode:pytuple" > delme-encode-expected.txt
-diff delme-encode-actual.txt delme-encode-expected.txt
+../solhacker.py <<< "('py', 'tuple')" > encode-actual.txt
+echo "fakepyamfencode:pytuple" > encode-expected.txt
+diff encode-actual.txt encode-expected.txt
 
