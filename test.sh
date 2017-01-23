@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# this test tests solhacker but not pyamf
+# it requires the fake pyamf module
+
 mkdir -p testdir
 cd testdir
 
