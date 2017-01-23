@@ -1,5 +1,12 @@
 #! /usr/bin/env python2
 
+# converts a flash cookie (sol) to plaintext (python repr)
+# requires pyamf
+
+# expects input from stdin
+# writes to stdout
+# no arguments
+
 import ast
 import pprint
 import sys
