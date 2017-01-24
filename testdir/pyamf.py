@@ -15,20 +15,20 @@
 class sol:
 
   @staticmethod
-  def decode(wat):
-    if not wat.startswith('sol'):
+  def decode(solobject):
+    if not solobject.startswith('sol'):
       raise Exception('fake pyamf decode exception')
-    return 'fakepyamfdecode:' + wat
+    return 'fakepyamfdecode:' + solobject
 
   @staticmethod
-  def encode(wat1, wat2):
-    return SolObject(wat1, wat2)
+  def encode(_string, _dict):
+    return SolObject(_string, _dict)
 
 class SolObject:
 
-  def __init__(self, wat1, wat2):
-    self.wat1 = wat1
-    self.wat2 = wat2
+  def __init__(self, _string, _dict):
+    self._string = _string
+    self._dict = _dict
 
   def getvalue(self):
-    return 'fakepyamfencode:' + self.wat1 + self.wat2 + '\n'
+    return 'fakepyamfencode:' + self._string + self._dict + '\n'
