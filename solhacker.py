@@ -16,11 +16,11 @@ from pyamf import sol
 def main():
   filecontent = sys.stdin.read()
   try:
-    solobject = sol.decode(filecontent)
-    pprint.pprint(solobject)
+    pytuple = sol.decode(filecontent)
+    pprint.pprint(pytuple)
   except Exception:
-    pyobject = ast.literal_eval(filecontent)
-    solobject = sol.encode(pyobject[0], pyobject[1])
+    pytuple = ast.literal_eval(filecontent)
+    solobject = sol.encode(pytuple[0], pytuple[1])
     sys.stdout.write(solobject.getvalue())
 
 if __name__ == "__main__":
