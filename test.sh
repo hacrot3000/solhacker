@@ -1,10 +1,11 @@
 #! /bin/bash
 
 # this test tests solhacker but not pyamf
-# it requires the fake pyamf module
+# it requires the fake pyamf module in testdir
 
-mkdir -p testdir
 cd testdir
+
+export PYTHONPATH="$PWD:$PYTHONPATH"
 
 echo "test decode"
 ../solhacker.py <<< "solbinaryblob" > decode-actual.txt
