@@ -3,8 +3,7 @@ solhacker
 
 convert flash cookie (sol) to plaintext (python repr) and back.
 
-requires PyAMF and python 2
-(tested only with pyamf 0.6.1 and python 2).
+requires python2 and pyamf: https://github.com/hydralabs/pyamf
 
 script expects input from stdin and writes output to stdout.
 
@@ -36,9 +35,6 @@ if that also fails then script will just give up.
 * more and more flash games try to protect their save files
 by encoding the data in some mime format or something.
 in that case this script is practically useless.
-* this script is old. it was written years ago
-(around the time pyamf 0.6.1 was released).
-i just brushed it up to put it on github.
 
 License
 -------
