@@ -20,9 +20,12 @@ def main():
     pytuple = sol.decode(filecontent)
     pprint.pprint(pytuple)
   except pyamf.DecodeError:
-    pytuple = ast.literal_eval(filecontent)
-    solobject = sol.encode(pytuple[0], pytuple[1])
-    sys.stdout.write(solobject.getvalue())
+    try:
+      pytuple = ast.literal_eval(filecontent)
+      solobject = sol.encode(pytuple[0], pytuple[1])
+      sys.stdout.write(solobject.getvalue())
+    except SyntaxError:
+      print 'error: cannot decode nor encode'
 
 if __name__ == "__main__":
   main()
