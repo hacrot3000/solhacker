@@ -26,6 +26,8 @@ def main():
       sys.stdout.write(solobject.getvalue())
     except SyntaxError:
       print 'error: cannot decode nor encode'
+    except ValueError:
+      print 'error: cannot encode pyamf.Undefined'
 
 if __name__ == "__main__":
   main()
