@@ -12,13 +12,15 @@
 # encode expects a string and a dict (the tuple) and returns a sol object
 # the sol object is defined by the method getvalue()
 
+class DecodeError(Exception):
+  pass
 
 class sol:
 
   @staticmethod
   def decode(solobject):
     if not solobject.startswith('sol'):
-      raise Exception('fake pyamf decode exception')
+      raise DecodeError('fake pyamf decode exception')
     return ('fakepyamfdecode:', solobject)
 
   @staticmethod

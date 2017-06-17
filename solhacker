@@ -11,6 +11,7 @@ import ast
 import pprint
 import sys
 
+import pyamf
 from pyamf import sol
 
 def main():
@@ -18,7 +19,7 @@ def main():
   try:
     pytuple = sol.decode(filecontent)
     pprint.pprint(pytuple)
-  except Exception:
+  except pyamf.DecodeError:
     pytuple = ast.literal_eval(filecontent)
     solobject = sol.encode(pytuple[0], pytuple[1])
     sys.stdout.write(solobject.getvalue())
