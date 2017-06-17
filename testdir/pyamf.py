@@ -23,13 +23,11 @@ class sol:
 
   @staticmethod
   def encode(_string, _dict):
+    class SolObject:
+      def __init__(self, _string, _dict):
+        self._string = _string
+        self._dict = _dict
+      def getvalue(self):
+        return 'fakepyamfencode:' + self._string + self._dict + '\n'
     return SolObject(_string, _dict)
 
-class SolObject:
-
-  def __init__(self, _string, _dict):
-    self._string = _string
-    self._dict = _dict
-
-  def getvalue(self):
-    return 'fakepyamfencode:' + self._string + self._dict + '\n'
