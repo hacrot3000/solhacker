@@ -6,11 +6,12 @@
 # here it is a class with static methods
 
 # decode expects a sol object and returns a tuple of a string and a dict
-# encode expects a string and a dict (the tuple) and returns a sol object
-
 # decode throws an exception if input is not a sol object
-# this behaviour is relied upon in the main program
-# the test script sends the string sol in place of the sol object
+# in this test the "sol object" is a string that begins with "sol"
+
+# encode expects a string and a dict (the tuple) and returns a sol object
+# the sol object is defined by the method getvalue()
+
 
 class sol:
 
