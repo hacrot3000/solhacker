@@ -21,7 +21,7 @@ class sol:
   def decode(solobject):
     if not solobject.startswith('sol'):
       raise DecodeError('fake pyamf decode exception')
-    return ('fakepyamfdecode:', solobject)
+    return ('string', {'dict': solobject})
 
   @staticmethod
   def encode(_string, _dict):
@@ -30,6 +30,6 @@ class sol:
         self._string = _string
         self._dict = _dict
       def getvalue(self):
-        return 'fakepyamfencode:' + self._string + self._dict + '\n'
+        return 'solobject:' + self._string + repr(self._dict) + '\n'
     return SolObject(_string, _dict)
 

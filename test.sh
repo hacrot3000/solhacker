@@ -9,11 +9,11 @@ export PYTHONPATH="$PWD:$PYTHONPATH"
 
 echo "test decode"
 ../solhacker <<< "solbinaryblob" > decode-actual.txt
-echo "('fakepyamfdecode:', 'solbinaryblob\n')" > decode-expected.txt
+echo "('string', {'dict': 'solbinaryblob\n'})" > decode-expected.txt
 diff decode-actual.txt decode-expected.txt
 
 echo "test encode"
-../solhacker <<< "('python', 'repr')" > encode-actual.txt
-echo "fakepyamfencode:pythonrepr" > encode-expected.txt
+../solhacker <<< "('string', {'dict': 'wat'})" > encode-actual.txt
+echo "solobject:string{'dict': 'wat'}" > encode-expected.txt
 diff encode-actual.txt encode-expected.txt
 
