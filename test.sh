@@ -9,7 +9,7 @@ export PYTHONPATH="$PWD:$PYTHONPATH"
 
 echo "test decode"
 ../solhacker <<< "solbinaryblob" > decode-actual.txt
-echo "'fakepyamfdecode:solbinaryblob\n'" > decode-expected.txt
+echo "('fakepyamfdecode:', 'solbinaryblob\n')" > decode-expected.txt
 diff decode-actual.txt decode-expected.txt
 
 echo "test encode"

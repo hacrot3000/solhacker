@@ -18,7 +18,7 @@ class sol:
   def decode(solobject):
     if not solobject.startswith('sol'):
       raise Exception('fake pyamf decode exception')
-    return 'fakepyamfdecode:' + solobject
+    return ('fakepyamfdecode:', solobject)
 
   @staticmethod
   def encode(_string, _dict):
