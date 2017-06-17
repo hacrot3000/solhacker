@@ -26,8 +26,6 @@ or be disappointed if it didn't work.
 
 notes:
 
-* script is simple and stupid.
-does no error checking and no error handling.
 * script tries to detect if input is flash cookie
 by converting the flash cookie to plaintext.
 if that fails it will try to convert plaintext to flash cookie.
@@ -35,6 +33,9 @@ if that also fails then script will just give up.
 * more and more flash games try to protect their save files
 by encoding the data in some mime format or something.
 in that case this script is practically useless.
+* sometimes there is a `pyamf.Undefined` in the plaintext.
+if that is the case solhacker will not be able to convert
+the plaintext back to a flash cookie.
 
 License
 -------
