@@ -1,6 +1,6 @@
 #! /usr/bin/env python2
 
-# converts a flash cookie (sol) to plaintext (python repr)
+# converts a flash cookie (sol) to plain text (python repr)
 # requires pyamf
 
 # expects input from stdin

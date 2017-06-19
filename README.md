@@ -1,7 +1,7 @@
 solhacker
 ---------
 
-convert flash cookie (sol) to plaintext (python repr) and back.
+convert flash cookie (sol) to plain text (python repr) and back.
 
 requires python2 and pyamf: https://github.com/hydralabs/pyamf
 
@@ -13,7 +13,7 @@ example:
 
 1. play stupid flash game.
 2. find flash cookie. usually `~/.macromedia/blah.../flashcookie.sol`.
-3. convert flash cookie to plaintext:
+3. convert flash cookie to plain text:
 
         solhacker < flashcookie.sol > pythonrepr.txt
 
@@ -27,15 +27,15 @@ or be disappointed if it didn't work.
 notes:
 
 * script tries to detect if input is flash cookie
-by converting the flash cookie to plaintext.
-if that fails it will try to convert plaintext to flash cookie.
+by converting the flash cookie to plain text.
+if that fails it will try to convert plain text to flash cookie.
 if that also fails then script will just give up.
 * more and more flash games try to protect their save files
 by encoding the data in some mime format or something.
 in that case this script is practically useless.
-* sometimes there is a `pyamf.Undefined` in the plaintext.
+* sometimes there is a `pyamf.Undefined` in the plain text.
 if that is the case solhacker will not be able to convert
-the plaintext back to a flash cookie.
+the plain text back to a flash cookie.
 
 License
 -------
