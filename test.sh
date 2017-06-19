@@ -14,7 +14,7 @@ diff decode-actual.txt decode-expected.txt
 
 echo "test encode"
 ../solhacker <<< "('string', {'dict': 'wat'})" > encode-actual.txt 2>&1
-echo "solobject:string{'dict': 'wat'}" > encode-expected.txt
+echo "solobject: 'string' {'dict': 'wat'}" > encode-expected.txt
 diff encode-actual.txt encode-expected.txt
 
 echo "test error"
@@ -23,7 +23,7 @@ echo "error: cannot decode nor encode" > error-expected.txt
 diff error-actual.txt error-expected.txt
 
 echo "test undefined"
-../solhacker <<< "(u'foo', {u'bar': pyamf.Undefined})" > undefined-actual.txt 2>&1
-echo "solobject:foo{u'bar': 'fakepyamf.Undefined'}" > undefined-expected.txt
+../solhacker <<< "('foo', {'bar': pyamf.Undefined})" > undefined-actual.txt 2>&1
+echo "solobject: 'foo' {'bar': 'fakepyamf.Undefined'}" > undefined-expected.txt
 diff undefined-actual.txt undefined-expected.txt
 

@@ -32,6 +32,6 @@ class sol:
         self._string = _string
         self._dict = _dict
       def getvalue(self):
-        return 'solobject:' + self._string + repr(self._dict) + '\n'
+        return 'solobject: %r %r\n' % (self._string, self._dict)
     return SolObject(_string, _dict)
 
