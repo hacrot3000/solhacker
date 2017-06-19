@@ -15,6 +15,8 @@
 class DecodeError(Exception):
   pass
 
+Undefined = 'fakepyamf.Undefined'
+
 class sol:
 
   @staticmethod

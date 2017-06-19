@@ -24,6 +24,6 @@ diff error-actual.txt error-expected.txt
 
 echo "test undefined"
 ../solhacker <<< "(u'foo', {u'bar': pyamf.Undefined})" > undefined-actual.txt 2>&1
-echo "error: cannot encode pyamf.Undefined" > undefined-expected.txt
+echo "solobject:foo{u'bar': 'fakepyamf.Undefined'}" > undefined-expected.txt
 diff undefined-actual.txt undefined-expected.txt
 

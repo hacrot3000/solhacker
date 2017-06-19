@@ -21,13 +21,15 @@ def main():
     pprint.pprint(pytuple)
   except pyamf.DecodeError:
     try:
-      pytuple = ast.literal_eval(filecontent)
-      solobject = sol.encode(pytuple[0], pytuple[1])
+      _string, _dict = ast.literal_eval(
+            filecontent.replace('pyamf.Undefined', repr('pyamf.Undefined')))
+      for key in _dict:
+        if _dict[key] == 'pyamf.Undefined':
+          _dict[key] = pyamf.Undefined
+      solobject = sol.encode(_string, _dict)
       sys.stdout.write(solobject.getvalue())
     except SyntaxError:
       print 'error: cannot decode nor encode'
-    except ValueError:
-      print 'error: cannot encode pyamf.Undefined'
 
 if __name__ == "__main__":
   main()
