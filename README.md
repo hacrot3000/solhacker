@@ -5,6 +5,8 @@ convert flash cookie (sol) to plain text (python repr) and back.
 
 requires python2 and pyamf: https://github.com/hydralabs/pyamf
 
+        pip install pyamf
+
 script expects input from stdin and writes output to stdout.
 
 use case: hack savegames of stupid flash games.
